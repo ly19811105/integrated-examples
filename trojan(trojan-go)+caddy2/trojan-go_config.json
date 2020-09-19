@@ -1,0 +1,64 @@
+{
+  "run_type": "server",
+  "local_addr": "127.0.0.1",
+  "local_port": 2083,
+  "remote_addr": "127.0.0.1",
+  "remote_port": 88,
+  "log_level": 1,
+  "log_file": "/var/log/trojan-go/error.log",
+  "password": [
+    "diy1155", //修改成自己的密码
+    "diy9125" //修改成自己的密码
+  ],
+  "disable_http_check": false,
+  "udp_timeout": 60,
+  "ssl": {
+    "verify_hostname": true,
+    "cert": "/etc/ssl/tls/xx.yy.crt", //换成你的证书，绝对路径
+    "key": "/etc/ssl/tls/xx.yy.key", //换成你的私钥，绝对路径
+    "key_password": "",
+    "cipher": "",
+    "curves": "",
+    "prefer_server_cipher": true,
+    "sni": "*.itdiy.ga",
+    "alpn": [
+      "http/1.1"
+    ],
+    "session_ticket": true,
+    "reuse_session": true,
+    "plain_http_response": "",
+    "fallback_addr": "",
+    "fallback_port": 443 //换成你自己回落错误端口
+  },
+  "tcp": {
+    "no_delay": true,
+    "keep_alive": true,
+    "prefer_ipv4": false
+  },
+  "router": {
+    "enabled": true,
+    "block": [
+      "geoip:private"
+    ],
+    "geoip": "/usr/local/bin/trojan-go/geoip.dat", //换成你自己文件绝对路径
+    "geosite": "/usr/local/bin/trojan-go/geosite.dat" //换成你自己文件绝对路径
+  },
+  "websocket": {
+    "enabled": false,
+    "path": "/TrojanGo",
+    "host": "www.itdiy.ga"
+  },
+  "shadowsocks": {
+    "enabled": false,
+    "method": "AES-128-GCM",
+    "password": ""
+  },
+  "transport_plugin": {
+    "enabled": false,
+    "type": "plaintext",
+    "command": "",
+    "option": "",
+    "arg": [],
+    "env": []
+  }
+}
