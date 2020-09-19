@@ -1,0 +1,10 @@
+xx.yy:80 {
+    root * /var/www/html
+    file_server
+}
+
+xx.yy:443 {
+    root * /var/www/html
+    file_server
+    tls /etc/ssl/tls/xx.yy.crt /etc/ssl/tls/xx.yy.key
+}
