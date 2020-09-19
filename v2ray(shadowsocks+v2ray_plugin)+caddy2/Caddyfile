@@ -1,0 +1,11 @@
+xx.yy {
+    root * /var/www
+    file_server
+    
+    @shadowsocks_ws {
+        path /ss1v2ray
+        header Connection *Upgrade*
+        header Upgrade websocket
+    }
+    reverse_proxy @shadowsocks_ws 127.0.0.1:2004
+}
