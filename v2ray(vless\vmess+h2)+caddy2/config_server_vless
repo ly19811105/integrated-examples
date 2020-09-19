@@ -1,0 +1,64 @@
+{
+  "log": {
+    "error": "/var/log/v2ray/error.log",
+    "access": "/var/log/v2ray/access.log",
+    "loglevel": "info"
+  },
+  "inbounds": [
+    {
+      "port": 2002, // 监听端口
+      "listen": "127.0.0.1", //只监听 127.0.0.1，避免除本机外的机器探测到2002端口
+      "protocol": "vless",
+      "settings": {
+        "clients": [
+          {
+            "email": "2002@gmail.com",
+            "id": "048e0bf2-dd56-11e9-aa37-5600024c1d6a" //修改成自己的UUID
+          }
+        ],
+        "decryption": "none"
+      },
+      "streamSettings": {
+        "security": "none",
+        "network": "h2",
+        "httpSettings": {
+          "host": [
+            "www.itdiy.ga"
+          ],
+          "path": "/SeuW56Es" //修改成自己的path
+        }
+      },
+      "sniffing": {
+        "enabled": true,
+        "destOverride": [
+          "http",
+          "tls"
+        ]
+      }
+    },
+  ],
+  "outbounds": [
+    {
+      "tag": "direct",
+      "protocol": "freedom",
+      "settings": {}
+    },
+    {
+      "tag": "blocked",
+      "protocol": "blackhole",
+      "settings": {}
+    }
+  ],
+  "routing": {
+    "domainStrategy": "AsIs",
+    "rules": [
+      {
+        "type": "field",
+        "protocol": [
+          "bittorrent"
+        ],
+        "outboundTag": "blocked"
+      }
+    ]
+  }
+}
