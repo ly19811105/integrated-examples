@@ -94,6 +94,9 @@
             "curves": ["x25519"],
             "default_sni": "xx.yy"
           }],
+          "automatic_https": {
+            "disable_redirects": true
+          },
           "errors": {
             "routes": [{
               "handle": [{
