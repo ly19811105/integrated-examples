@@ -43,8 +43,8 @@
           ],
           "certificates": [
             {
-              "certificateFile": "/etc/ssl/tls/itdiy.ga.crt",
-              "keyFile": "/etc/ssl/tls/itdiy.ga.key"
+              "certificateFile": "/etc/ssl/tls/xx.yy.crt",
+              "keyFile": "/etc/ssl/tls/xx.yy.key"
             }
           ]
         },
