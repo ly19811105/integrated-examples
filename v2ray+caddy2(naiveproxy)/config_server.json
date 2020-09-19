@@ -79,8 +79,7 @@
             "Host": ""
           },
           "path": "/HALdGZ9k"
-        },
-        "httpSettings": {}
+        }
       },
       "sniffing": {
         "enabled": true,
@@ -139,8 +138,7 @@
             "Host": ""
           },
           "path": "/SS1v2ray"
-        },
-        "httpSettings": {}
+        }
       }
     },
     {
@@ -158,8 +156,7 @@
         "network": "domainsocket",
         "dsSettings": {
           "path": "/var/run/ss1-loop.sock"
-        },
-        "httpSettings": {}
+        }
       },
       "sniffing": {
         "enabled": true,
@@ -197,10 +194,7 @@
             "type": "none"
           },
           "seed": "60VoqhfjP79nBQyU"
-        },
-        "httpSettings": {},
-        "tcpSettings": {},
-        "wsSettings": {}
+        }
       },
       "sniffing": {
         "enabled": true,
