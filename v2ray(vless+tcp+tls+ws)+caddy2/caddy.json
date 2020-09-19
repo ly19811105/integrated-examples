@@ -1,0 +1,39 @@
+{
+  "admin": {
+    "disabled": true
+  },
+  "logging": {
+    "logs": {
+      "default": {
+        "writer": {
+          "output": "file",
+          "filename": "/var/log/caddy/access.log"
+        },
+        "encoder": {
+          "format": "console"
+        },
+        "level": "ERROR"
+      }
+    }
+  },
+  "apps": {
+    "http": {
+      "servers": {
+        "srv0": {
+          "listen": ["127.0.0.1:80"], //只监听 127.0.0.1，避免除本机外的机器访问,保证回落一致，都是https。
+          "routes": [{
+            "handle": [{
+              "handler": "file_server",
+              "root": "/var/www/html" //改成自己存放的web文件目录
+            }],
+            "terminal": true
+          }],
+          "automatic_https": {
+          	"disable": true
+          },
+          "allow_h2c": true //开启h2c server支持。
+        }
+      }
+    }
+  }
+}
