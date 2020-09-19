@@ -1,0 +1,120 @@
+{
+  "admin": {
+    "disabled": true
+  },
+  "logging": {
+    "logs": {
+      "default": {
+        "writer": {
+          "output": "file",
+          "filename": "/var/log/caddy/access.log"
+        },
+        "encoder": {
+          "format": "console"
+        },
+        "level": "ERROR"
+      }
+    }
+  },
+  "apps": {
+    "http": {
+      "servers": {
+        "srv0": {
+          "listen": ["127.0.0.1:88"],
+          "routes": [{
+            "handle": [{
+              "handler": "file_server",
+              "root": "/var/www/html"
+            }],
+            "terminal": true
+          }],
+          "errors": {
+            "routes": [{
+              "handle": [{
+                "handler": "error",
+                "error": "warning",
+                "status_code": "404"
+              }],
+              "terminal": true
+            }]
+          },
+          "automatic_https": {
+            "disable": true
+          },
+          "allow_h2c": true
+        },
+        "srv1": {
+          "listen": [":443"],
+          "routes": [{
+            "handle": [{
+              "handler": "forward_proxy",
+              "hide_ip": true,
+              "hide_via": true,
+              "auth_user": "diy",
+              "auth_pass": "diy9125",
+              "probe_resistance": {
+              	"domain": "unsplash.com:443"
+              }
+            }]
+          },
+          {
+            "match": [{
+              "host": ["xx.yy"]
+            }],
+            "handle": [{
+              "handler": "subroute",
+              "routes": [{
+                "match": [{
+                  "path": ["/SeuW56Es"]
+                }],
+                "handle": [{
+                  "handler": "reverse_proxy",
+                  "upstreams": [{
+                    "dial": "127.0.0.1:2002"
+                  }],
+                  "transport": {
+                    "protocol": "http",
+                    "versions": ["h2c"]
+                  }
+                }],
+                "terminal": true
+              },
+              {
+                "handle": [{
+                  "handler": "file_server",
+                  "root": "/var/www/html"
+                }],
+                "terminal": true
+              }]
+            }],
+            "terminal": true
+          }],
+          "tls_connection_policies": [{
+            "cipher_suites": ["TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384","TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256"],
+            "curves": ["x25519"],
+            "default_sni": "xx.yy"
+          }],
+          "errors": {
+            "routes": [{
+              "handle": [{
+                "handler": "error",
+                "error": "warning",
+                "status_code": "404"
+              }],
+              "terminal": true
+            }]
+          },
+          "experimental_http3": true
+        }
+      }
+    },
+    "tls": {
+      "certificates": {
+        "load_files": [{
+          "certificate": "/etc/ssl/tls/xx.yy.crt",
+          "key": "/etc/ssl/tls/xx.yy.key"
+        }]
+      }
+    }
+  }
+}
