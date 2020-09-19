@@ -1,0 +1,83 @@
+{
+  "admin": {
+    "disabled": true
+  },
+  "logging": {
+    "logs": {
+      "default": {
+        "writer": {
+          "output": "file",
+          "filename": "/var/log/caddy/access.log"
+        },
+        "encoder": {
+          "format": "console"
+        },
+        "level": "ERROR"
+      }
+    }
+  },
+  "apps": {
+    "http": {
+      "servers": {
+        "srv0": {
+          "listen": ["127.0.0.1:80"], //只监听 127.0.0.1，避免除本机外的非安全web访问。
+          "routes": [{
+            "handle": [{
+              "handler": "forward_proxy",
+              "hide_ip": true,
+              "hide_via": true,
+              "auth_user": "diy", //naiveproxy账号，修改为自己的。
+              "auth_pass": "diy9125", //naiveproxy密码，修改为自己的。
+              "probe_resistance": {
+              	"domain": "unsplash.com:8443"
+              }
+            }]
+          },
+          {
+            "handle": [{
+              "handler": "subroute",
+              "routes": [{
+                "match": [{
+                  "path": ["/SeuW56Es"] //与v2ray h2 path对应
+                }],
+                "handle": [{
+                  "handler": "reverse_proxy",
+                  "upstreams": [{
+                    "dial": "127.0.0.1:2002" //与v2ray h2 端口对应
+                  }],
+                  "transport": {
+                    "protocol": "http",
+                    "versions": ["h2c"]
+                  }
+                }],
+                "terminal": true
+              },
+              {
+                "handle": [{
+                  "handler": "file_server",
+                  "root": "/var/www/html" //改成自己存放的web文件目录
+                }],
+                "terminal": true
+              }]
+            }],
+            "terminal": true
+          }],
+          "errors": {
+            "routes": [{
+              "handle": [{
+                "handler": "error",
+                "error": "warning",
+                "status_code": "404"
+              }],
+              "terminal": true
+            }]
+          },
+          "automatic_https": {
+            "disable": true
+          },
+          "allow_h2c": true
+        }
+      }
+    }
+  }
+}
