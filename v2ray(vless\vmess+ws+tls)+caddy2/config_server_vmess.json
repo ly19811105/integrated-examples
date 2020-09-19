@@ -1,0 +1,66 @@
+{
+  "log": {
+    "error": "/var/log/v2ray/error.log",
+    "access": "/var/log/v2ray/access.log",
+    "loglevel": "info"
+  },
+  "inbounds": [
+    {
+      "port": 2001, // 监听端口
+      "listen": "127.0.0.1", //只监听 127.0.0.1，避免除本机外的机器探测到2001端口
+      "protocol": "vmess",
+      "settings": {
+        "clients": [
+          {
+            "email": "2001@gmail.com",
+            "id": "21376258-dd56-11e9-aa37-5600024c1d6a", //修改成自己的UUID
+            "alterId": 16
+          }
+        ],
+        "disableInsecureEncryption": true
+      },
+      "streamSettings": {
+        "security": "none",
+        "network": "ws",
+        "wsSettings": {
+          "headers": {
+            "Host": ""
+          },
+          "path": "/HALdGZ9k" //修改成自己的path
+        },
+        "httpSettings": {}
+      },
+      "sniffing": {
+        "enabled": true,
+        "destOverride": [
+          "http",
+          "tls"
+        ]
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "tag": "direct",
+      "protocol": "freedom",
+      "settings": {}
+    },
+    {
+      "tag": "blocked",
+      "protocol": "blackhole",
+      "settings": {}
+    }
+  ],
+  "routing": {
+    "domainStrategy": "AsIs",
+    "rules": [
+      {
+        "type": "field",
+        "protocol": [
+          "bittorrent"
+        ],
+        "outboundTag": "blocked"
+      }
+    ]
+  }
+}
