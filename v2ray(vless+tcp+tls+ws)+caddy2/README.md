@@ -4,7 +4,8 @@ VLESS over TCP with TLS + 回落 & 分流 to WebSocket
 
 
 原理图： v2ray client <--- tcp/ws+tls ---> v2ray server <--- 回落 ---> caddy2
-                                               \<--- 分流 ---> v2ray server
+
+                                              \<--- 分流 ---> v2ray server
 注意：
 
 1、caddy2 目前只能json配置才能支持 h2c server，故要实现回落h2c就不能采用Caddyfile配置。
