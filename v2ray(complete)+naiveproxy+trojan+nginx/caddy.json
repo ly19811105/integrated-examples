@@ -44,7 +44,7 @@
           "allow_h2c": true
         },
         "srv1": {
-          "listen": [":7443"],
+          "listen": ["127.0.0.1:7443"],
           "routes": [{
             "handle": [{
               "handler": "forward_proxy",
