@@ -37,8 +37,8 @@
           ],
           "certificates": [
             {
-              "certificateFile": "/etc/ssl/tls/xx.yy.crt",
-              "keyFile": "/etc/ssl/tls/xx.yy.key"
+              "certificateFile": "/etc/ssl/tls/xx.yy.crt", // 换成你的证书，绝对路径
+              "keyFile": "/etc/ssl/tls/xx.yy.key" // 换成你的私钥，绝对路径
             }
           ]
         },
