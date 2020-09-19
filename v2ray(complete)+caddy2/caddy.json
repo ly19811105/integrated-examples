@@ -22,31 +22,25 @@
         "srv0": {
           "listen": ["127.0.0.1:80"], //只监听 127.0.0.1，避免除本机外的非安全web访问。
           "routes": [{
+            "match": [{
+              "path": ["/SeuW56Es"] //与v2ray h2 path对应
+            }],
             "handle": [{
-              "handler": "subroute",
-              "routes": [{
-                "match": [{
-                  "path": ["/SeuW56Es"] //与v2ray h2 path对应
-                }],
-                "handle": [{
-                  "handler": "reverse_proxy",
-                  "upstreams": [{
-                    "dial": "127.0.0.1:2002" //与v2ray h2 端口对应
-                  }],
-                  "transport": {
-                    "protocol": "http",
-                    "versions": ["h2c"]
-                  }
-                }],
-                "terminal": true
-              },
-              {
-                "handle": [{
-                  "handler": "file_server",
-                  "root": "/var/www/html" //改成自己存放的web文件目录
-                }],
-                "terminal": true
-              }]
+              "handler": "reverse_proxy",
+              "upstreams": [{
+                "dial": "127.0.0.1:2002" //与v2ray h2 端口对应
+              }],
+              "transport": {
+                "protocol": "http",
+                "versions": ["h2c"]
+              }
+            }],
+            "terminal": true
+          },
+          {
+            "handle": [{
+              "handler": "file_server",
+              "root": "/var/www/html" //改成自己存放的web文件目录
             }],
             "terminal": true
           }],
