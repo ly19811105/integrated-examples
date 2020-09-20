@@ -2,7 +2,7 @@ xx.yy { //修改成自己的域名
     root * /var/www
     file_server
     
-    @shadowsocks_ws { //标识。此标识仅区分，多个代理需要改成不同名称，但要与下边‘reverse_proxy’中标识对应。
+    @shadowsocks_ws { //标签。此标签仅区分，多个代理需要改成不同名称，但要与下边‘reverse_proxy’中标识对应。
         path /ss1v2ray  //修改成自己的path
         header Connection *Upgrade*
         header Upgrade websocket
