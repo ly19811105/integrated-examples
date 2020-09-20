@@ -7,3 +7,5 @@
 3、naiveproxy直连。v2ray h2类应用分流（反代）一次。
 
 3、trojan(trojan-go)直连。
+
+4、caddy 使用本人github文件，才可以同时支持naiveproxy及v2ray h2方向代理。
