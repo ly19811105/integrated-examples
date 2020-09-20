@@ -25,7 +25,7 @@
 
 4、v2ray(complete)+naiveproxy+trojan+nginx （用nginx基于SNI功能来对v2ray、naiveproxy、trojan分流，实现共用一个端口，如443端口。）
 
-注：此处naiveproxy=caddy2+forwardproxy插件，定制编译而成。此文件已编译好，本github下载即可。
+注：naiveproxy=caddy2+forwardproxy，此文件已编译好，本github下载即可。
 
 贡献指南
 
