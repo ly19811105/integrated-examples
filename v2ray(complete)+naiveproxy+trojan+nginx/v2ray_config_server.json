@@ -75,9 +75,6 @@
         "security": "none",
         "network": "ws",
         "wsSettings": {
-          "headers": {
-            "Host": ""
-          },
           "path": "/HALdGZ9k"
         }
       },
@@ -134,9 +131,6 @@
         "security": "none",
         "network": "ws",
         "wsSettings": {
-          "headers": {
-            "Host": ""
-          },
           "path": "/SS1v2ray"
         }
       }
