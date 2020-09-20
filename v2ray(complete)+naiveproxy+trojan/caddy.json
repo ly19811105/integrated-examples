@@ -20,8 +20,8 @@
     "http": {
       "servers": {
         "srv0": {
-          "listen": ["127.0.0.1:88"], //只监听本机端口，避免除本机外的机器探测及非安全web访问。此端口主要为web回落应用。
-          "routes": [{yy
+          "listen": ["127.0.0.1:88"], //只监听本机端口，避免除本机外的机器探测及非安全web访问。此端口主要为web回落应用。因下面开启自动http->https，故此处不用http默认端口80。
+          "routes": [{
             "handle": [{
               "handler": "file_server",
               "root": "/var/www/html" //修改成自己存放的web文件路径
