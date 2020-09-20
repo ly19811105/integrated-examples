@@ -17,7 +17,7 @@
 
 综合集成配置示例（从简单到复杂）
 
-1、v2ray(complete)+caddy2 （vless+tcp、vless+ws、shadowsocks+ws、vless+h2、vmess+kcp）
+1、v2ray(complete)+caddy2 （vless+tcp、vless+ws、shadowsocks+ws、vless+h2、vmess+kcp+seed）
 
 2、v2ray(complete)+naiveproxy （上述应用+naiveproxy）
 
