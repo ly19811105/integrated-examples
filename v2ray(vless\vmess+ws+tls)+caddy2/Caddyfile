@@ -1,5 +1,5 @@
 xx.yy { //修改成自己的域名
-    root * /var/www //改成自己存放的web文件目录
+    root * /var/www //修改成自己存放的web文件路径
     file_server
     
     @v2ray_ws { /标签。此标签仅区分，多个代理需要改成不同名称，但要与下边‘reverse_proxy’中标识对应。
