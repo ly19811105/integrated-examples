@@ -24,7 +24,7 @@
           "routes": [{
             "handle": [{
               "handler": "file_server",
-              "root": "/var/www/html" //改成自己存放的web文件目录
+              "root": "/var/www/html" //修改成自己存放的web文件路径
             }],
             "terminal": true
           }],
