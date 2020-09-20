@@ -4,7 +4,7 @@
 
 单一集成配置示例（从简单到复杂）
 
-1、v2ray(vless\vmess+ws+tls)+caddy2 （老vmess协议时代，推荐部署。）
+1、v2ray(vless\vmess+ws+tls)+caddy2 （vmess协议时代，推荐部署。）
 
 2、v2ray(vless\vmess+h2)+caddy2 （h2优势:链路复用。）
 
