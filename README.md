@@ -17,13 +17,13 @@
 
 综合集成配置示例
 
-1、v2ray(complete)+caddy2
+1、v2ray(complete)+caddy2 （vless+tcp、vless+ws、shadowsocks+ws、vless+h2、vmess+kcp）
 
-2、v2ray(complete)+naiveproxy
+2、v2ray(complete)+naiveproxy （上述应用+naiveproxy）
 
-3、v2ray(complete)+naiveproxy+trojan
+3、v2ray(complete)+naiveproxy+trojan（上述应用+trojan）
 
-4、v2ray(complete)+naiveproxy+trojan+nginx
+4、v2ray(complete)+naiveproxy+trojan+nginx （用nginx来对v2ray、naiveproxy、trojan分流，实现共用一个端口，如443端口。）
 
 
 贡献指南
