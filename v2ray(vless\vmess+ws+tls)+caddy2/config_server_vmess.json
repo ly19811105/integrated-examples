@@ -7,7 +7,7 @@
   "inbounds": [
     {
       "port": 2001, //监听端口，此端口收发web代理(如caddy2、nginx等）转来的v2ray数据流。
-      "listen": "127.0.0.1", //只监听 127.0.0.1，避免除本机外的机器探测到2001端口
+      "listen": "127.0.0.1", //只监听本机，避免除本机外的机器探测到2001端口。
       "protocol": "vmess",
       "settings": {
         "clients": [
@@ -23,9 +23,6 @@
         "security": "none",
         "network": "ws",
         "wsSettings": {
-          "headers": {
-            "Host": ""
-          },
           "path": "/HALdGZ9k" //修改成自己的path
         },
         "httpSettings": {}
