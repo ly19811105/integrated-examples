@@ -15,7 +15,7 @@
 5、v2ray(vless+tcp+tls+ws)+caddy2 （目前推荐部署，同时支持tcp与ws。）
 
 
-综合集成配置示例
+综合集成配置示例（从简单到复杂）
 
 1、v2ray(complete)+caddy2 （vless+tcp、vless+ws、shadowsocks+ws、vless+h2、vmess+kcp）
 
