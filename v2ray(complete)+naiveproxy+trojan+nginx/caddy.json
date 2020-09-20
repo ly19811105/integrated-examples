@@ -20,11 +20,11 @@
     "http": {
       "servers": {
         "srv0": {
-          "listen": ["127.0.0.1:88"],
+          "listen": ["127.0.0.1:88"], //只监听本机端口，避免除本机外的机器探测及非安全web访问。此端口为web回落提供服务。无必要用http的默认端口80。
           "routes": [{
             "handle": [{
               "handler": "file_server",
-              "root": "/var/www/html"
+              "root": "/var/www/html" //修改为自己存放的web文件路径
             }],
             "terminal": true
           }],
@@ -41,17 +41,17 @@
           "automatic_https": {
             "disable": true
           },
-          "allow_h2c": true
+          "allow_h2c": true //开启h2c server支持。
         },
         "srv1": {
-          "listen": ["127.0.0.1:7443"],
+          "listen": ["127.0.0.1:7443"], //只监听本机端口，避免除本机外的机器探测及非安全web访问。因nginx分流统一监听端口为443，故此端口改成7443。
           "routes": [{
             "handle": [{
               "handler": "forward_proxy",
               "hide_ip": true,
               "hide_via": true,
-              "auth_user": "diy",
-              "auth_pass": "diy9125",
+              "auth_user": "diy", //naiveproxy账号，修改为自己的。
+              "auth_pass": "diy9125", //naiveproxy密码，修改为自己的。
               "probe_resistance": {
               	"domain": "unsplash.com:443"
               }
@@ -59,18 +59,18 @@
           },
           {
             "match": [{
-              "host": ["xx.yy"]
+              "host": ["xx.yy"] //修改为自己域名
             }],
             "handle": [{
               "handler": "subroute",
               "routes": [{
                 "match": [{
-                  "path": ["/SeuW56Es"]
+                  "path": ["/SeuW56Es"] //与v2ray h2 path对应
                 }],
                 "handle": [{
                   "handler": "reverse_proxy",
                   "upstreams": [{
-                    "dial": "127.0.0.1:2002"
+                    "dial": "127.0.0.1:2002" //与v2ray h2 端口对应
                   }],
                   "transport": {
                     "protocol": "http",
@@ -82,7 +82,7 @@
               {
                 "handle": [{
                   "handler": "file_server",
-                  "root": "/var/www/html"
+                  "root": "/var/www/html" //修改为自己存放的web文件路径
                 }],
                 "terminal": true
               }]
@@ -92,10 +92,10 @@
           "tls_connection_policies": [{
             "cipher_suites": ["TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384","TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256"],
             "curves": ["x25519"],
-            "default_sni": "xx.yy"
+            "default_sni": "xx.yy" //修改为自己域名
           }],
           "automatic_https": {
-            "disable_redirects": true
+            "disable_redirects": true //因nginx分流仅监听443端口，无法实现自动http->https，故关闭自动http->https。
           },
           "errors": {
             "routes": [{
@@ -107,15 +107,15 @@
               "terminal": true
             }]
           },
-          "experimental_http3": true
+          "experimental_http3": true //开启http3 server支持。
         }
       }
     },
     "tls": {
       "certificates": {
         "load_files": [{
-          "certificate": "/etc/ssl/tls/xx.yy.crt",
-          "key": "/etc/ssl/tls/xx.yy.key"
+          "certificate": "/etc/ssl/tls/xx.yy.crt", // 换成你的证书，绝对路径。
+          "key": "/etc/ssl/tls/xx.yy.key" // 换成你的私钥，绝对路径。
         }]
       }
     }
