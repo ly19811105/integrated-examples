@@ -23,7 +23,7 @@
 
 3、v2ray(complete)+naiveproxy+trojan（上述应用+trojan）
 
-4、v2ray(complete)+naiveproxy+trojan+nginx （用nginx的SNI功能来对v2ray、naiveproxy、trojan分流，实现共用一个端口，如443端口。）
+4、v2ray(complete)+naiveproxy+trojan+nginx （用nginx基于SNI功能来对v2ray、naiveproxy、trojan分流，实现共用一个端口，如443端口。）
 
 
 贡献指南
