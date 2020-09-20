@@ -60,7 +60,7 @@
         "clients": [
           {
             "email": "2001@gmail.com",
-            "id": "048e0bf2-dd56-11e9-aa37-5600024c1d6a"， //修改成自己的UUID
+            "id": "048e0bf2-dd56-11e9-aa37-5600024c1d6a", //修改成自己的UUID
             "alterId": 16
           }
         ],
