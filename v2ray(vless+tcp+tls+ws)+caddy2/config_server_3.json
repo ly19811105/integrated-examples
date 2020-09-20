@@ -18,7 +18,7 @@
         "decryption": "none",
         "fallbacks": [
           {
-            "dest": 80,
+            "dest": 80, //回落到web服务器端口
             "xver": 0
           },
           {
