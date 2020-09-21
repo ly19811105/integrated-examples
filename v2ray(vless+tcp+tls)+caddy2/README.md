@@ -1,5 +1,5 @@
 原理图：
-v2ray client <--- tcp+tls ---> v2ray server <--- 回落 ---> caddy2
+v2ray client <--- tcp+tls ---> v2ray server <--- web回落 ---> caddy2
 
 注意：
 
