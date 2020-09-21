@@ -38,7 +38,7 @@
               "handler": "subroute",
               "routes": [{
                 "match": [{
-                  "path": ["/SeuW56Es"] //与v2ray h2 path对应
+                  "path": ["/SeuW56Es"] //分流出h2,与v2ray h2 path对应。
                 }],
                 "handle": [{
                   "handler": "reverse_proxy",
