@@ -37,7 +37,7 @@
         "security": "none",
         "network": "domainsocket",
         "dsSettings": {
-          "path": "/var/run/ss1-loop.sock" //Domain Socket，与outbounds中对应。
+          "path": "/var/run/ss1-loop.sock" //与outbounds中对应
         }
       },
       "sniffing": {
@@ -61,7 +61,7 @@
       "streamSettings": {
         "network": "domainsocket",
         "dsSettings": {
-          "path": "/var/run/ss1-loop.sock" //Domain Socket，与streamSettings中对应。
+          "path": "/var/run/ss1-loop.sock" //与streamSettings中对应
         }
       }
     },
