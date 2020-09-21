@@ -17,13 +17,15 @@
 
 综合集成配置示例（从简单到复杂）
 
-1、v2ray(complete)+caddy2 （vless+tcp、vless+ws、shadowsocks+ws、vless+h2、vmess+kcp+seed）
+1、v2ray(complete-tcp)+caddy2 （vless+ws、shadowsocks+ws、vless+h2、vmess+kcp+seed）
 
-2、v2ray(complete)+naiveproxy （上述应用+naiveproxy）
+2、v2ray(complete)+caddy2 （vless+tcp、vless+ws、shadowsocks+ws、vless+h2、vmess+kcp+seed）
 
-3、v2ray(complete)+naiveproxy+trojan（上述应用+trojan）
+3、v2ray(complete)+naiveproxy （上述应用+naiveproxy）
 
-4、v2ray(complete)+naiveproxy+trojan+nginx （nginx为v2ray、naiveproxy、trojan进行sni分流，共用443端口。）
+4、v2ray(complete)+naiveproxy+trojan（上述应用+trojan）
+
+5、v2ray(complete)+naiveproxy+trojan+nginx （nginx为v2ray、naiveproxy、trojan进行sni分流，共用443端口。）
 
 注：naiveproxy=caddy2+forwardproxy。此程序文件已编译好，本github下载即可。
 
