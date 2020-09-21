@@ -1,0 +1,39 @@
+{
+  "admin": {
+    "disabled": true
+  },
+  "apps": {
+    "http": {
+      "servers": {
+        "srv0": {
+          "listen": [":443"],
+          "routes": [{
+            "match": [{"path": ["/HALdGZ9k"]}], //修改成自己的path
+            "handle": [{
+              "handler": "reverse_proxy",
+              "upstreams": [{"dial": "127.0.0.1:2001"}] //转发给本机v2ray对应端口
+            }],
+            "terminal": true
+          },
+          {
+            "handle": [{
+              "handler": "file_server",
+              "root": "/var/www/html" //修改成自己存放的web文件路径
+            }],
+            "terminal": true
+          }],
+        }
+      }
+    },
+    "tls": {
+      "automation": {
+        "policies": [{
+          "subjects": ["xx.yy"], //修改成自己的域名
+          "issuer": {
+            "module": "acme"
+          }
+        }]
+      }
+    }
+  }
+}
