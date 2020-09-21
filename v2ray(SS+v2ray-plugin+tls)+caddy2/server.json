@@ -6,7 +6,7 @@
   },
   "inbounds": [
     {
-      "tag": "ss1ws", //标签
+      "tag": "ss1ws", //标签，与routing中标签对应。
       "port": "2004", //监听端口，此端口收发web代理服务器(如caddy2、nginx等）转来的v2ray数据流。
       "listen": "127.0.0.1", //只监听本机，避免除本机外的机器探测到上面监听端口。
       "protocol": "dokodemo-door",
@@ -56,7 +56,7 @@
       "settings": {}
     },
     {
-      "tag": "ss1mux", //标签
+      "tag": "ss1mux", //标签，与routing中标签对应。
       "protocol": "freedom",
       "streamSettings": {
         "network": "domainsocket",
