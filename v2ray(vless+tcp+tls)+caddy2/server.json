@@ -18,7 +18,7 @@
         "decryption": "none",
         "fallbacks": [
           {
-            "dest": 80, //回落到web服务器端口
+            "dest": 80, //h2与http/1.1共用此端口回落到web服务器,即web服务器同时支持h2c server与http/1.1 server应用。
             "xver": 0
           }
         ]
@@ -27,8 +27,8 @@
         "security": "tls",
         "tlsSettings": {
           "alpn":[
-            "h2",
-            "http/1.1"
+            "h2", //启用h2，web回落也必须对应。
+            "http/1.1" //启用http/1.1，web回落也必须对应。
           ],
           "certificates": [
             {
