@@ -8,10 +8,14 @@
         "srv0": {
           "listen": [":443"],
           "routes": [{
-            "match": [{"path": ["/HALdGZ9k"]}], //修改成自己的path
+            "match": [{
+            	"path": ["/HALdGZ9k"] //分流出ws,与本机v2ray path对应。
+            }],
             "handle": [{
               "handler": "reverse_proxy",
-              "upstreams": [{"dial": "127.0.0.1:2001"}] //转发给本机v2ray对应端口
+              "upstreams": [{
+              	"dial": "127.0.0.1:2001" //转发给本机v2ray对应端口
+              }]
             }],
             "terminal": true
           },
