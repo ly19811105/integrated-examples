@@ -1,0 +1,18 @@
+[Unit]
+Description=Caddy
+Documentation=https://caddyserver.com/docs/
+After=network.targett
+
+[Service]
+User=root
+ExecStart=/usr/local/bin/caddy/caddy run --environ --config /usr/local/etc/caddy/caddy2.json
+ExecReload=/usr/local/bin/caddy/caddy reload --config /usr/local/etc/caddy/caddy2.json
+TimeoutStopSec=5s
+LimitNOFILE=1048576
+LimitNPROC=512
+PrivateTmp=true
+ProtectSystem=full
+AmbientCapabilities=CAP_NET_BIND_SERVICE
+
+[Install]
+WantedBy=multi-user.target
