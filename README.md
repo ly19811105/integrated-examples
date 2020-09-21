@@ -21,11 +21,11 @@
 
 2、v2ray(complete)+caddy2 （vless+tcp、vless+ws、vless+h2、shadowsocks+ws、vmess+kcp+seed）
 
-3、v2ray(complete)+naiveproxy （上述应用+naiveproxy）
+3、v2ray(complete)+naiveproxy （上一项应用+naiveproxy）
 
-4、v2ray(complete)+naiveproxy+trojan（上述应用+trojan。各监听端口对外公开，同级对等。）
+4、v2ray(complete)+naiveproxy+trojan（上一项应用+trojan。各监听端口对外公开，同级对等。）
 
-5、v2ray(complete)+naiveproxy+trojan+nginx （nginx为v2ray、naiveproxy、trojan进行sni分流，共用443端口。）
+  5、v2ray(complete)+naiveproxy+trojan+nginx （用nginx对上一项应用进行SNI分流，共用443端口。）
 
 注：naiveproxy=caddy2+forwardproxy。此程序文件已编译好，本github下载即可。
 
