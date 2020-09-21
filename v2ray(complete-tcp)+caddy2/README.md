@@ -1,6 +1,6 @@
 注：
 
-1、除v2ray kcp外,所用应用共用443端口。此端口由caddy2监听，caddy2前置，反向代理分流ws与h2。无vless tcp应用。
+1、除v2ray kcp外,所用应用共用443端口。此端口由caddy2监听（即caddy2前置），反向代理分流ws与h2。无vless tcp应用。
 
 2、v2ray ws类应用分流（反代）一次。v2ray h2类应用分流（反代）一次。
 
