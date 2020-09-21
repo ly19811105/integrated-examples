@@ -9,12 +9,12 @@
           "listen": [":443"],
           "routes": [{
             "match": [{
-            	"path": ["/ss1v2ray"] //分流出ws,与本机v2ray path对应。
+            	"path": ["/ss1v2ray"] //分流出ws,与本机shadowsocks ws path对应。
             }],
             "handle": [{
               "handler": "reverse_proxy",
               "upstreams": [{
-              	"dial": "127.0.0.1:2004" //转发给本机v2ray对应端口
+              	"dial": "127.0.0.1:2004" //转发给本机shadowsocks ws对应端口
               }]
             }],
             "terminal": true
