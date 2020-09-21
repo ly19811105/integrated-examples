@@ -1,0 +1,24 @@
+xx.yy { //修改成自己的域名
+    root * /var/www/html //修改成自己存放的web文件路径
+    file_server
+    
+    @v2ray_ws { /标签。此标签仅区分，多个代理需要改成不同名称，但要与下边‘reverse_proxy’中标识对应。
+        path /HALdGZ9k  //分流出ws,与本机v2ray ws path对应。
+        header Connection *Upgrade*
+        header Upgrade websocket
+    }
+    reverse_proxy @v2ray_ws 127.0.0.1:2001 //转发给本机v2ray ws对应端口
+
+    reverse_proxy /SeuW56Es 127.0.0.1:2002 { //分流出h2,与本机v2ray h2 path对应；转发给本机v2ray对应端口。
+        transport http {
+            versions h2c
+        }
+    }
+
+    @shadowsocks_ws { //标签。此标签仅区分，多个代理需要改成不同名称，但要与下边‘reverse_proxy’中标识对应。
+        path /ss1v2ray //分流出ws,与本机shadowsocks ws path对应。
+        header Connection *Upgrade*
+        header Upgrade websocket
+    }
+    reverse_proxy @shadowsocks_ws 127.0.0.1:2004 //转发给本机shadowsocks ws对应端口
+}
