@@ -1,0 +1,76 @@
+{
+  "admin": {
+    "disabled": true
+  },
+  "apps": {
+    "http": {
+      "servers": {
+        "srv0": {
+          "listen": [":443"],
+          "routes": [{
+            "match": [{
+            	"path": ["/HALdGZ9k"] //分流出ws,与本机v2ray ws path对应。
+            }],
+            "handle": [{
+              "handler": "reverse_proxy",
+              "upstreams": [{
+              	"dial": "127.0.0.1:2001" //转发给本机v2ray ws对应端口
+              }]
+            }],
+            "terminal": true
+          },
+          {
+            "match": [{
+              "path": ["/SeuW56Es"] //分流出h2,与本机v2ray h2 path对应。
+            }],
+            "handle": [{
+              "handler": "reverse_proxy",
+              "upstreams": [{
+                "dial": "127.0.0.1:2002" //转发给本机v2ray h2对应端口
+              }],
+              "transport": {
+                "protocol": "http",
+                "versions": ["h2c"]
+              }
+            }],
+            "terminal": true
+          },
+          {
+            "match": [{
+            	"path": ["/ss1v2ray"] //分流出ws,与本机shadowsocks ws path对应。
+            }],
+            "handle": [{
+              "handler": "reverse_proxy",
+              "upstreams": [{
+              	"dial": "127.0.0.1:2004" //转发给本机shadowsocks ws对应端口
+              }]
+            }],
+            "terminal": true
+          },
+          {
+            "handle": [{
+              "handler": "file_server",
+              "root": "/var/www/html" //修改成自己存放的web文件路径
+            }],
+            "terminal": true
+          }],
+          "tls_connection_policies": [{
+            "match": {
+              "sni": ["xx.yy"], //修改成自己的域名
+            }
+          }]
+        }
+      }
+    },
+    "tls": {
+      "automation": {
+        "policies": [{
+          "subjects": ["xx.yy"], //修改成自己的域名
+          "issuer": {
+            "module": "acme"
+          }
+        }]
+      }
+    }
+  }
+}
