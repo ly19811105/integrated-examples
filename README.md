@@ -23,7 +23,7 @@
 
 3、v2ray(complete)+naiveproxy+trojan（上述应用+trojan）
 
-4、v2ray(complete)+naiveproxy+trojan+nginx （nginx为v2ray、naiveproxy、trojan进行sni分流，实现共用443端口。）
+4、v2ray(complete)+naiveproxy+trojan+nginx （nginx为v2ray、naiveproxy、trojan进行sni分流，共用443端口。）
 
 注：naiveproxy=caddy2+forwardproxy。此程序文件已编译好，本github下载即可。
 
