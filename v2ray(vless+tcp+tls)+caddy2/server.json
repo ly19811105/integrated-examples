@@ -27,8 +27,8 @@
         "security": "tls",
         "tlsSettings": {
           "alpn":[
-            "h2", //启用h2连接，web回落也必须对应。
-            "http/1.1" //启用http/1.1连接，web回落也必须对应。
+            "h2", //启用h2连接，web回落也必须支持h2回落。
+            "http/1.1" //启用http/1.1连接，web回落也必须支持http/1.1回落。
           ],
           "certificates": [
             {
