@@ -2,10 +2,10 @@
     "run_type": "client",
     "local_addr": "127.0.0.1",
     "local_port": 1080,
-    "remote_addr": "xx.yy", //改成服务端中配置的对应域名
-    "remote_port": 443, //改成服务端中配置的对应端口
+    "remote_addr": "xx.yy", //改成服务端配置的对应域名
+    "remote_port": 443, //改成服务端配置的对应端口
     "password": [
-        "password" //改成服务端中设置的对应密码
+        "password" //改成服务端设置的对应密码
     ],
     "log_level": 1,
     "ssl": {
