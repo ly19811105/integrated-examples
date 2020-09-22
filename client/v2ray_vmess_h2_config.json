@@ -21,12 +21,12 @@
       "settings":{
         "vnext":[
           {
-            "address":"xx.yy",
-            "port":443,
+            "address":"xx.yy", //改成服务器中配置的域名
+            "port":443, //改成服务器中配置的端口
             "users":[
               {
-                "id":"a343b796-66eb-11ea-a4e2-42010aaa0019",
-                "alterId":0,
+                "id":"a343b796-66eb-11ea-a4e2-42010aaa0019", //改成服务器中配置的UUID
+                "alterId":0, //为0启用VMessAEAD；如服务器端开启才实际启用，否则实际不启用。大于0关闭VMessAEAD。
                 "security":"auto"
               }
             ]
@@ -40,7 +40,7 @@
           "host": [
             "xx.yy"
           ],
-          "path": "/nSBv5RjE"
+          "path": "/nSBv5RjE" //改成服务器中设置的path
         }
       }
     },
