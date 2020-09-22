@@ -41,7 +41,8 @@
         }
       },
       "mux": {
-        "enabled":true
+        "enabled": true,
+        "concurrency": 4
       }
     },
     {
