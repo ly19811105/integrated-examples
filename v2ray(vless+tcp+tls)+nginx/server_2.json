@@ -18,12 +18,12 @@
         "decryption": "none",
         "fallbacks": [
           {
-            "dest": "/dev/shm/h1.web", //http/1.1回落到进程
+            "dest": "/dev/shm/h1.web", //http/1.1回落进程
             "xver": 1 //nginx 支持 PROXY protocol，开启传递请求的真实来源 IP 和端口给nginx。
           },
           {
             "alpn": "h2", //h2回落匹配 
-            "dest": "/dev/shm/h2.web", //h2回落到进程
+            "dest": "/dev/shm/h2.web", //h2回落进程
             "xver": 1 //nginx 支持 PROXY protocol，开启传递请求的真实来源 IP 和端口给nginx。
           }
         ]
