@@ -1,3 +1,5 @@
+此配置实现以http/1.1或http/2自适应代理科学上网，非v2ray的web回落给caddy2。
+
 原理图：
 v2ray client <--- tcp+tls ---> v2ray server <--- web回落 ---> caddy2
 
