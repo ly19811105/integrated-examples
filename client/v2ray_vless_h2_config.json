@@ -25,7 +25,7 @@
             "port":443, //改成服务器中配置的端口
             "users":[
               {
-                "id":"a3d238a4-b777-11ea-90d6-42010a8c000a", //改成服务器中配置的UUID。
+                "id":"a3d238a4-b777-11ea-90d6-42010a8c000a", //改成服务器中配置的UUID
                 "encryption":"none"
               }
             ]
@@ -39,7 +39,7 @@
           "host": [
             "xx.yy"
           ],
-          "path": "/nSBv5RjE" //改成服务器中设置的path。
+          "path": "/nSBv5RjE" //改成服务器中设置的path
         }
       }
     },
