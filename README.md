@@ -10,9 +10,9 @@
 
 3、v2ray(SS+v2ray-plugin+tls)+caddy2\nginx（不常用，如需直接使用shadowsocks客户端可部署。）
 
-4、v2ray(vless+tcp+tls)+caddy2\nginx （vless协议新特性:tcp应用下的回落/分流）
+4、v2ray(vless+tcp+tls)+caddy2 （vless协议新特性:tcp应用下的回落/分流）
 
-5、v2ray(vless+tcp+tls+ws)+caddy2\nginx （目前推荐部署，同时支持tcp与ws。）
+5、v2ray(vless+tcp+tls+ws)+caddy2 （目前推荐部署，同时支持tcp与ws。）
 
 
 综合集成服务器端配置示例（从简单到复杂）
