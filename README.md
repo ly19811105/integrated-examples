@@ -9,13 +9,12 @@
 6、v2ray(vless+tcp+tls)+nginx （vless协议新特性:tcp应用下的回落/分流，回落给nginx。）  
 7、v2ray(vless+tcp+tls+ws)+nginx （目前推荐部署，同时支持tcp与ws，回落给nginx。）  
 
-综合集成服务器端配置示例（从简单到复杂） 
+综合集成服务器端配置示例（从简单到复杂）  
 1、v2ray(complete-tcp)+caddy2 （vless+ws、vless+h2、shadowsocks+ws、vmess+kcp+seed）  
 2、v2ray(complete)+caddy2 （vless+tcp、vless+ws、vless+h2、shadowsocks+ws、vmess+kcp+seed）  
 3、v2ray(complete)+naiveproxy （上一项应用+naiveproxy）  
 4、v2ray(complete)+naiveproxy+trojan（上一项应用+trojan。各程序监听端口对外公开，同级对等。）  
 5、v2ray(complete)+naiveproxy+trojan+nginx （用nginx对上一项应用进行SNI分流，共用443端口。）  
-
 注：naiveproxy=caddy2+forwardproxy。此程序文件已编译好，本github下载即可。
 
 贡献指南  
