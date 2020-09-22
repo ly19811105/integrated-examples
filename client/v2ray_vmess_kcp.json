@@ -1,0 +1,80 @@
+{
+  "log":{},
+  "inbounds":[
+    {
+      "port":"1080",
+      "protocol":"socks",
+      "settings":{
+        "auth":"noauth",
+        "udp":true
+      }
+    },
+    {
+      "port":"1081",
+      "protocol":"http",
+      "settings":{}
+    }
+  ],
+  "outbounds":[
+    {
+      "protocol":"vmess",
+      "settings":{
+        "vnext":[
+          {
+            "address":"www.itdiy.ga",
+            "port":2083,
+            "users":[
+              {
+                "id":"f78417de-cbe9-11ea-8e45-42010a8c000a",
+                "alterId":0,
+                "security":"auto"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings":{
+        "security":"none",
+        "network":"kcp",
+        "kcpSettings": {
+          "mtu":1350,
+          "tti":50,
+          "uplinkCapacity":5,
+          "downlinkCapacity":20,
+          "congestion":false,
+          "readBufferSize":2,
+          "writeBufferSize":2,
+          "header":{
+            "type": "none"
+          },
+          "seed": "60VoqhfjP79nBQyU"
+        }
+      },
+      "mux": {
+        "enabled": true
+      }
+    },
+    {
+      "tag":"direct",
+      "protocol":"freedom",
+      "settings":{}
+    },
+    {
+      "tag":"blocked",
+      "protocol":"blackhole",
+      "settings":{}
+    }
+  ],
+  "routing":{
+    "domainStrategy":"IPOnDemand",
+    "rules":[
+      {
+        "type":"field",
+        "ip":[
+          "geoip:private"
+        ],
+        "outboundTag":"direct"
+      }
+    ]
+  }
+}
