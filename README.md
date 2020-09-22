@@ -3,7 +3,6 @@
 
 
 单一集成服务器端配置示例（从简单到复杂）
-
 1、v2ray(vless\vmess+ws+tls)+caddy2\nginx （之前vmess协议时代，推荐部署。）
 
 2、v2ray(vless\vmess+h2)+caddy2 （h2优势：链路复用。）
