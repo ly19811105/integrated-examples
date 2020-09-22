@@ -26,7 +26,7 @@
             "users":[
               {
                 "id":"a343b796-66eb-11ea-a4e2-42010aaa0019", //改成服务器中配置的UUID
-                "alterId":0, //为0启用VMessAEAD；如服务器端开启才实际启用，否则实际不启用。大于0关闭VMessAEAD。
+                "alterId":0, //为0启用VMessAEAD；如服务器端开启才实际启用，否则实际不启用。大于0关闭VMessAEAD，如服务器端大于0（即关闭VMessAEAD），此数值与服务器端一致。
                 "security":"auto"
               }
             ]
