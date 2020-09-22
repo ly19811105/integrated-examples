@@ -12,9 +12,9 @@
 
 4、v2ray(vless+tcp+tls)+caddy2 （vless协议新特性:tcp应用下的回落/分流，回落给caddy2。）
 
-5、v2ray(vless+tcp+tls)+nginx （vless协议新特性:tcp应用下的回落/分流，回落给nginx。）
+5、v2ray(vless+tcp+tls+ws)+caddy2 （目前推荐部署，同时支持tcp与ws，回落给caddy2。）
 
-6、v2ray(vless+tcp+tls+ws)+caddy2 （目前推荐部署，同时支持tcp与ws，回落给caddy2。）
+6、v2ray(vless+tcp+tls)+nginx （vless协议新特性:tcp应用下的回落/分流，回落给nginx。）
 
 7、v2ray(vless+tcp+tls+ws)+nginx （目前推荐部署，同时支持tcp与ws，回落给nginx。）
 
