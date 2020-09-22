@@ -1,8 +1,8 @@
-这里是科学上网的服务器端集成配置示例。
+这里是科学上网的集成配置示例。
 如是不太了解科学上网，建议先依次从简单到复杂参考及部署。
 
 
-单一集成配置示例（从简单到复杂）
+单一集成服务器端配置示例（从简单到复杂）
 
 1、v2ray(vless\vmess+ws+tls)+caddy2 （之前vmess协议时代，推荐部署。）
 
@@ -15,7 +15,7 @@
 5、v2ray(vless+tcp+tls+ws)+caddy2 （目前推荐部署，同时支持tcp与ws。）
 
 
-综合集成配置示例（从简单到复杂）
+综合集成服务器端配置示例（从简单到复杂）
 
 1、v2ray(complete-tcp)+caddy2 （vless+ws、vless+h2、shadowsocks+ws、vmess+kcp+seed）
 
