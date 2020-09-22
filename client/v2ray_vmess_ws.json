@@ -37,9 +37,6 @@
         "security":"tls",
         "network":"ws",
         "wsSettings":{
-          "headers":{
-            "Host":""
-          },
           "path":"/HALdGZ9k"
         }
       },
