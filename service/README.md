@@ -1,1 +1,1 @@
-此文件内为v2ray、caddy、trojan/trojan-go及nginx的service文件，分享出来便于systemctl配置。各自文件中执行文件路径及配置文件路径，修改为自己实际即可。
+此文件内为v2ray、caddy、trojan/trojan-go及nginx的service文件，分享出来便于systemctl配置。文件中执行文件路径及配置文件路径，修改为自己实际即可。
