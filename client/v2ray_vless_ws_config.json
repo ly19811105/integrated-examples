@@ -21,11 +21,11 @@
       "settings":{
         "vnext":[
           {
-            "address":"xx.yy",
-            "port":443,
+            "address":"xx.yy", //改成服务器中配置的域名
+            "port":443, //改成服务器中配置的端口
             "users":[
               {
-                "id":"a3d238a4-b777-11ea-90d6-42010a8c000a",
+                "id":"a3d238a4-b777-11ea-90d6-42010a8c000a", //改成服务器中配置的UUID
                 "encryption":"none"
               }
             ]
@@ -36,7 +36,7 @@
         "security":"tls",
         "network":"ws",
         "wsSettings":{
-          "path":"/5hBv56Es"
+          "path":"/5hBv56Es" //改成服务器中设置的path
         }
       },
       "mux": {
