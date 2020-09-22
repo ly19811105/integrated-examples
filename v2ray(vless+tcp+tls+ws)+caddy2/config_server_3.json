@@ -18,8 +18,8 @@
         "decryption": "none",
         "fallbacks": [
           {
-            "dest": 80, //回落到web服务器端口
-            "xver": 0
+            "dest": 80, //h2与http/1.1共用此端口回落到web服务器,即web服务器同时支持h2c server与http/1.1 server应用。
+            "xver": 0 //caddy不支持PROXY protocol，此处必须为0。
           },
           {
             "path": "/SS1v2ray", //通过路径分流出ws
@@ -32,13 +32,13 @@
         "security": "tls",
         "tlsSettings": {
           "alpn":[
-            "h2",
-            "http/1.1"
+            "h2", //启用h2连接，web回落也必须支持h2回落。
+            "http/1.1" //启用http/1.1连接，web回落也必须支持http/1.1回落。
           ],
           "certificates": [
             {
-              "certificateFile": "/etc/ssl/tls/xx.yy.crt", // 换成你的证书，绝对路径
-              "keyFile": "/etc/ssl/tls/xx.yy.key" // 换成你的私钥，绝对路径
+              "certificateFile": "/etc/ssl/tls/xx.yy.crt", // 换成你的证书，绝对路径。
+              "keyFile": "/etc/ssl/tls/xx.yy.key" // 换成你的私钥，绝对路径。
             }
           ]
         },
@@ -53,8 +53,8 @@
       }
     },
     {
-      "tag": "ss1ws",
-      "port": "2004", // 监听端口
+      "tag": "ss1ws", //标签，与routing中标签对应。
+      "port": "2004", //监听端口，此端口收发web代理服务器(如caddy2、nginx等）转来的v2ray数据流。
       "listen": "127.0.0.1", //只监听本机，避免除本机外的机器探测到上面监听端口。
       "protocol": "dokodemo-door",
       "settings": {
@@ -103,7 +103,7 @@
       "settings": {}
     },
     {
-      "tag": "ss1mux",
+      "tag": "ss1mux", //标签，与routing中标签对应。
       "protocol": "freedom",
       "streamSettings": {
         "network": "domainsocket",
